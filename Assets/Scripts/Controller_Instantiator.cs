@@ -4,6 +4,7 @@ using UnityEngine;
 public class Controller_Instantiator : MonoBehaviour
 {
     public List<GameObject> enemies;
+    public List<GameObject> Orbe;
     public GameObject instantiatePos;
     public float respawningTimer;
     private float time = 0;
@@ -11,6 +12,7 @@ public class Controller_Instantiator : MonoBehaviour
     void Start()
     {
         Controller_Enemy.enemyVelocity = 2;
+        ControllerHealth.velocidadOrbe = 2;
     }
 
     void Update()
@@ -23,6 +25,7 @@ public class Controller_Instantiator : MonoBehaviour
     {
         time += Time.deltaTime;
         Controller_Enemy.enemyVelocity = Mathf.SmoothStep(1f, 15f, time / 45f);
+        ControllerHealth.velocidadOrbe = Mathf.SmoothStep(1f, 15f, time / 45f);
     }
 
     private void SpawnEnemies()
@@ -34,5 +37,15 @@ public class Controller_Instantiator : MonoBehaviour
             Instantiate(enemies[UnityEngine.Random.Range(0, enemies.Count)], instantiatePos.transform);
             respawningTimer = UnityEngine.Random.Range(2, 6);
         }
+    }
+    private void SpawnOrbes() 
+    {
+        respawningTimer -= Time.deltaTime;
+        if (respawningTimer<=0) 
+        {
+            Instantiate(Orbe[UnityEngine.Random.Range(0, Orbe.Count)], instantiatePos.transform);
+            respawningTimer = UnityEngine.Random.Range(2, 6);
+        }
+    
     }
 }

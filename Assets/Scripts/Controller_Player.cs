@@ -1,7 +1,10 @@
-﻿using UnityEngine;
+﻿using System.Threading;
+using UnityEngine;
 
 public class Controller_Player : MonoBehaviour
 {
+    public GameObject Combustible;
+    public int vidaComb;
     private Rigidbody rb;
     public float jumpForce = 10;
     private float initialSize;
@@ -72,6 +75,12 @@ public class Controller_Player : MonoBehaviour
         {
             Destroy(this.gameObject);
             Controller_Hud.gameOver = true;
+        }
+
+        if (collision.tag("Player")) 
+        {
+           Combustible.GetComponent<BarraProgreso>()value  = + vidaBarra;
+            Destroy(gameObject);
         }
 
         if (collision.gameObject.CompareTag("Floor"))
