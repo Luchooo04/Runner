@@ -1,10 +1,12 @@
 ﻿using System.Threading;
 using UnityEngine;
 
+
 public class Controller_Player : MonoBehaviour
 {
-    public GameObject Combustible;
-    public int vidaComb;
+    //public GameObject player;
+   // public GameObject Combustible;
+    //public int vidaComb;
     private Rigidbody rb;
     public float jumpForce = 10;
     private float initialSize;
@@ -77,12 +79,13 @@ public class Controller_Player : MonoBehaviour
             Controller_Hud.gameOver = true;
         }
 
-        if (collision.tag("Player")) 
+       /*if (collision.gameObject.CompareTag("Player")) 
         {
-           Combustible.GetComponent<BarraProgreso>()value  = + vidaBarra;
+            Combustible.GetComponent<BarraProgreso>().vidaComb += vidaBarra;
+
             Destroy(gameObject);
         }
-
+       */
         if (collision.gameObject.CompareTag("Floor"))
         {
             floored = true;

@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7182385139065494620}
   - component: {fileID: 4605524446859990063}
   - component: {fileID: 6338462838278959360}
-  - component: {fileID: 487517502561925262}
+  - component: {fileID: -1535689985594474021}
   m_Layer: 0
   m_Name: Orbe
   m_TagString: Orbe
@@ -94,7 +94,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1094194323188015009}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -115,7 +115,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &487517502561925262
+--- !u!114 &-1535689985594474021
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
