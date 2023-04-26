@@ -24,16 +24,16 @@ public class HealthBar : MonoBehaviour
             DecreaseHealth();
             timer = 0f;
         }
-        void OnCollisionEnter(Collision collision)
-        {
-            if (collision.gameObject.CompareTag("Orbe"))
-            {
-                AddHealth();
-            }
-        }
+       
     }
 
-
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Orbe"))
+        {
+            AddHealth();
+        }
+    }
 
     void DecreaseHealth()
     {

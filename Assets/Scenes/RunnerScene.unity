@@ -560,13 +560,11 @@ MonoBehaviour:
   - {fileID: 4641428172921375839, guid: ad4857fb319b5014696c8c201b507222, type: 3}
   - {fileID: 4362255490418720725, guid: 10839c286a1f27947bc1fa05aee0bfdb, type: 3}
   - {fileID: 9145002132079440597, guid: 0e6260b13f6e84c47b94dd28da588bcd, type: 3}
-  instantiatePos: {fileID: 1094194323188015009, guid: 7c3d545ee817d154788460bc75f47f8c,
-    type: 3}
-  SpawnerOrbes: {fileID: 1094194323188015009, guid: 7c3d545ee817d154788460bc75f47f8c,
-    type: 3}
-  respawningTimer: 0
-  spawnDelay: 2
-  spawnRageX: 5
+  Orbes:
+  - {fileID: 1094194323188015009, guid: 7c3d545ee817d154788460bc75f47f8c, type: 3}
+  instantiatePos: {fileID: 432534838}
+  respawningTimerEnemy: 0
+  respawningTimerOrbe: 0
 --- !u!1 &544024728
 GameObject:
   m_ObjectHideFlags: 0
@@ -1457,8 +1455,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b4edce82d10e9bf40a1936572654861c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Combustible: {fileID: 0}
-  vidaComb: 0
   jumpForce: 10
 --- !u!54 &1018040025
 Rigidbody:
@@ -1563,11 +1559,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1018040023}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a51ad11eb04553041a978f71a6c36412, type: 3}
+  m_Script: {fileID: 11500000, guid: e5f88e56929bb0646b963b0da9cae7d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vidaBarra: 100
-  barraProgreso: {fileID: 1154651991}
+  slider: {fileID: 1154651991}
+  maxHealth: 100
+  timeToDecrease: 1
+  timeToAdd: 5
 --- !u!1 &1105942186
 GameObject:
   m_ObjectHideFlags: 0
