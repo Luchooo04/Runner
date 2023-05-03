@@ -32,6 +32,7 @@ public class HealthBar : MonoBehaviour
         if (collision.gameObject.CompareTag("Orbe"))
         {
             AddHealth();
+            
         }
     }
 

@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Controller_Player : MonoBehaviour
 {
-    //public GameObject player;
-   // public GameObject Combustible;
-    //public int vidaComb;
+   // public GameObject player;
+    public GameObject Combustible;
+    public int vidaComb;
     private Rigidbody rb;
     public float jumpForce = 10;
     private float initialSize;
@@ -76,16 +76,18 @@ public class Controller_Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(this.gameObject);
-            Controller_Hud.gameOver = true;
+           GameManager.gameOver = true;
         }
-
+        
        /*if (collision.gameObject.CompareTag("Player")) 
-        {
-            Combustible.GetComponent<BarraProgreso>().vidaComb += vidaBarra;
+       {
+            Destroy(this.gameObject);
+             //Combustible.GetComponent<HealthBar>().vidaComb += maxHealth;
 
-            Destroy(gameObject);
-        }
-       */
+
+       }
+        */
+       
         if (collision.gameObject.CompareTag("Floor"))
         {
             floored = true;

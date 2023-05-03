@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ControllerHealth : MonoBehaviour
 {
+    public GameObject Combustible;  
     public static float velocidadOrbe;
     private Rigidbody rb;
 
@@ -21,6 +22,15 @@ public class ControllerHealth : MonoBehaviour
         if (this.transform.position.x <= -15)
         {
             Destroy(this.gameObject);
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+
         }
     }
 }
