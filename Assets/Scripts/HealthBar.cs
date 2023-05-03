@@ -1,3 +1,4 @@
+using System.Configuration;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +11,13 @@ public class HealthBar : MonoBehaviour
     public float timeToDecrease = 1f;
     public float timeToAdd = 5f;
 
-    void Start()
+    public void Start()
     {
         currentHealth = maxHealth;
         slider.value = currentHealth;
     }
 
-    void Update()
+    public void Update()
     {
         timer += Time.deltaTime;
         if (timer >= timeToDecrease)
@@ -24,17 +25,20 @@ public class HealthBar : MonoBehaviour
             DecreaseHealth();
             timer = 0f;
         }
+        
        
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("Orbe"))
+        if (other.tag == "Orbe")
         {
             AddHealth();
-            
+            Destroy(gameObject);
         }
+
     }
+        
 
     void DecreaseHealth()
     {
@@ -42,7 +46,7 @@ public class HealthBar : MonoBehaviour
         slider.value = currentHealth;
     }
 
-    void AddHealth()
+    public  void AddHealth()
     {
         currentHealth += 20f;
         if (currentHealth > maxHealth)
